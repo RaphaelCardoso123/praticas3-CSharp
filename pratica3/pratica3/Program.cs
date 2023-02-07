@@ -6,7 +6,7 @@ namespace pratica3
     {
         static void Main(string[] args)
         {
-            PrintService printService = new PrintService();
+            PrintService<int> printService = new PrintService<int>();
 
             Console.Write("How many values? ");
             int n = int.Parse(Console.ReadLine());
@@ -16,6 +16,10 @@ namespace pratica3
                 int x = int.Parse(Console.ReadLine());
                 printService.AddValue(x);
             }
+            int a = printService.First();
+            int b = a + 2;
+            Console.Write(b);
+
             printService.Print();
             Console.Write("First: " + printService.First());
 
