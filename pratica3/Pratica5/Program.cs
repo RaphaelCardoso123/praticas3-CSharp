@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using Pratica5.Entities;
 
 namespace Pratica5
 {
@@ -8,7 +7,13 @@ namespace Pratica5
     {
         static void Main(string[] args)
         {
-            public int MyProperty { get; set; }
-    }
+            Client a = new Client { Name = "Maria", Email = "maria@gemail" };
+            Client b = new Client { Name = "José", Email = "jose@gmail" };
+
+            Console.WriteLine(a.Equals(b));
+
+            Console.ReadLine();
+
+        }
     }
 }
