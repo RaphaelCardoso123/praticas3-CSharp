@@ -28,6 +28,12 @@ namespace Pratica6
 
             Console.WriteLine("Size: " + cookies.Count);
 
+            Console.WriteLine("ALL COOKIES:");
+            foreach (var item in cookies) 
+            {
+                Console.WriteLine(item.Key + ": " + item.Value);
+            }
+
             Console.ReadLine();
         }
     }
