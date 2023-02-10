@@ -13,7 +13,20 @@ namespace Pratica6
             cookies["email"] = "flagia@gmail";
             cookies["phone"] = "991352372";
 
-            Console.WriteLine(cookies["user"]);
+            Console.WriteLine(cookies["phone"]);
+
+            cookies.Remove("email");
+
+            if (cookies.ContainsKey("email"))
+            {
+                Console.WriteLine(cookies["email"]);
+            }
+            else
+            {
+                Console.WriteLine("There is no 'email' key!");
+            }
+
+            Console.WriteLine("Size: " + cookies.Count);
 
             Console.ReadLine();
         }
