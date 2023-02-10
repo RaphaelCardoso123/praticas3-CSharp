@@ -11,9 +11,10 @@ namespace Pratica5
             Client b = new Client { Name = "José", Email = "jose@gmail" };
 
             Console.WriteLine(a.Equals(b));
+            Console.WriteLine(a.GetHashCode());
+            Console.WriteLine(b.GetHashCode());
 
             Console.ReadLine();
-
         }
     }
 }
