@@ -3,9 +3,9 @@ using System.Globalization;
 
 namespace Pratica7.Extensions
 {
-    class DateTimeExtensions
+    static class DateTimeExtensions
     {
-        static string ElapsedTime(this DateTime thisObj)
+        public static string ElapsedTime(this DateTime thisObj)
         {
             TimeSpan duration = DateTime.Now.Subtract(thisObj);
 

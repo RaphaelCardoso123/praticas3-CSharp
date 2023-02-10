@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pratica7.Extensions;
+using System;
+using Pratica7.Extensions;
 
 namespace Pratica7
 {
