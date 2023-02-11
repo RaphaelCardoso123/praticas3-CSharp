@@ -14,13 +14,22 @@ namespace Pratica8
             list.Add(new Product("Mouse", 50.00));
             list.Add(new Product("Tablet", 350.00));
 
+            /*
             list.RemoveAll(p => p.Price >= 100.00);
+            foreach(Product p in list)
+            */
+            list.ForEach(UpdatePrice);
             foreach(Product p in list)
             {
                 Console.WriteLine(p);
-
+            }
+            {
                 Console.ReadLine();
             }
+        }
+        static void UpdatePrice(Product p)
+        {
+            p.Price += p.Price * 0.1;
         }
     }
 }
