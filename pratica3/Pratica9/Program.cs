@@ -15,17 +15,14 @@ namespace Pratica9
             list.Add(new Product("Mouse", 50.00));
             list.Add(new Product("Tablet", 350.00));
 
+            Func<Product, string> func = p => p.Name.ToUpper();
 
-            List<string> result = list.Select(NameUpper).ToList();
+            List<string> result = list.Select(func).ToList();
             foreach(string s in result)
             {
                 Console.WriteLine(s);
-                Console.ReadLine();
             }
-        }
-        static string NameUpper(Product p)
-        {
-            return p.Name.ToUpper();
+            Console.ReadLine();
         }
     }
 }
