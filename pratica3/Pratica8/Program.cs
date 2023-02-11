@@ -18,12 +18,14 @@ namespace Pratica8
             list.RemoveAll(p => p.Price >= 100.00);
             foreach(Product p in list)
             */
-            list.ForEach(UpdatePrice);
-            foreach(Product p in list)
+
+            Action<Product> act = UpdatePrice;
+
+            list.ForEach(act);
+            foreach (Product p in list)
             {
                 Console.WriteLine(p);
-            }
-            {
+           
                 Console.ReadLine();
             }
         }
