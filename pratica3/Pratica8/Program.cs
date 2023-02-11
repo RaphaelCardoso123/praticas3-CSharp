@@ -19,9 +19,11 @@ namespace Pratica8
             foreach(Product p in list)
             */
 
+            /*
             Action<Product> act = UpdatePrice;
+            */
 
-            list.ForEach(act);
+            list.ForEach(p => { p.Price += p.Price * 0.1; });
             foreach (Product p in list)
             {
                 Console.WriteLine(p);
@@ -29,9 +31,11 @@ namespace Pratica8
                 Console.ReadLine();
             }
         }
+        /*
         static void UpdatePrice(Product p)
         {
             p.Price += p.Price * 0.1;
         }
+        */
     }
 }
