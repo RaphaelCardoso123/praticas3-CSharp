@@ -30,10 +30,18 @@ namespace Pratica11
                 new Product() { Id = 4, Name = "Connectors", Price = 30.0, Category = c1 }
             };
 
-            var r1 = products.Where(p => p.Category.Tier == 1 && p.Price < 900.0);
+            //var r1 = products.Where(p => p.Category.Tier == 1 && p.Price < 900.0);
+            var r1 =
+                from p in products
+                where p.Category.Tier == 1 && p.Price < 900.0
+                select p;
             Print("Tier 1 and Price < 900.00:", r1);
 
-            var r2 = products.Where(p => p.Category.Name == "Tools").Select(p => p.Name);
+            //var r2 = products.Where(p => p.Category.Name == "Tools").Select(p => p.Name);
+            var r2 =
+                from p in products
+                where p.Category.Name == "Tools"
+                select p.Name;
             Print("Tools:", r2);
 
             var r3 = products.Where(p => p.Name[0] == 'C').Select(p => new { p.Name, p.Price, CategoryName = p.Name });
