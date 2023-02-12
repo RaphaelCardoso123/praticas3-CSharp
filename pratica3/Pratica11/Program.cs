@@ -10,7 +10,7 @@ namespace Pratica11
         static void Print<T>(string message, IEnumerable<T> collection)
         {
             Console.WriteLine(message);
-            foreach(T obj in collection)
+            foreach (T obj in collection)
             {
                 Console.WriteLine(obj);
             }
@@ -41,6 +41,12 @@ namespace Pratica11
 
             var r4 = products.Where(p => p.Category.Tier == 1).OrderBy(p => p.Price).ThenBy(p => p.Name);
             Print("Tier 1 order by price then by name:", r4);
+
+            var r5 = products.Max(p => p.Price);
+            Console.WriteLine("Max Price:" + r5);
+
+            var r6 = products.Where(p => p.Category.Id == 1).Sum(p => p.Price);
+            Console.WriteLine("Category 1 Sum Price: " + r6);
 
             Console.ReadLine();
         }
