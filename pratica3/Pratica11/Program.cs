@@ -31,13 +31,16 @@ namespace Pratica11
             };
 
             var r1 = products.Where(p => p.Category.Tier == 1 && p.Price < 900.0);
-            Print("Tier 1 and Price < 900.00", r1);
+            Print("Tier 1 and Price < 900.00:", r1);
 
             var r2 = products.Where(p => p.Category.Name == "Tools").Select(p => p.Name);
-            Print("Tools", r2);
+            Print("Tools:", r2);
 
             var r3 = products.Where(p => p.Name[0] == 'C').Select(p => new { p.Name, p.Price, CategoryName = p.Name });
-            Print("Names started qith 'C' and anonymous object", r3);
+            Print("Names started with 'C' and anonymous object:", r3);
+
+            var r4 = products.Where(p => p.Category.Tier == 1).OrderBy(p => p.Price).ThenBy(p => p.Name);
+            Print("Tier 1 order by price then by name:", r4);
 
             Console.ReadLine();
         }
