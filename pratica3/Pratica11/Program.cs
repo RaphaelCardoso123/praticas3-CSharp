@@ -33,7 +33,7 @@ namespace Pratica11
             var r1 = products.Where(p => p.Category.Tier == 1 && p.Price < 900.0);
             Print("Tier 1 and Price < 900.00", r1);
 
-            var r2 = products.Where(p => p.Category.Name == "Tools");
+            var r2 = products.Where(p => p.Category.Name == "Tools").Select(p => p.Name);
             Print("Tools", r2);
 
             Console.ReadLine();
