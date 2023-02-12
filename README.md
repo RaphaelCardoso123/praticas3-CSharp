@@ -1,3 +1,3 @@
 # praticas3-CSharp
 Tópicos:
-Generics / Restrição de generics / GetHashCode / Equal / SortedSet / Dictionary / SortedDictiorany
+Generics / Restrição de generics / GetHashCode / Equal / SortedSet / Dictionary / SortedDictiorany / Action / Expressão Lambda / LINQ ...
