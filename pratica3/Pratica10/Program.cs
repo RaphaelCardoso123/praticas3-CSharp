@@ -20,6 +20,7 @@ namespace Pratica10
             {
                 Console.WriteLine(x);
             }
+
             Console.ReadLine();
         }
     }
