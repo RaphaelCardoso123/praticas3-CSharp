@@ -27,7 +27,7 @@ namespace Pratica11
                 new Product() { Id = 1, Name = "Computer", Price = 1100.0, Category = c2 },
                 new Product() { Id = 2, Name = "SmartPhone", Price = 90.0, Category = c2 },
                 new Product() { Id = 3, Name = "Hammer", Price = 70.0, Category = c1 },
-                new Product() { Id = 4, Name = "Glove", Price = 30.0, Category = c1 }
+                new Product() { Id = 4, Name = "Connectors", Price = 30.0, Category = c1 }
             };
 
             var r1 = products.Where(p => p.Category.Tier == 1 && p.Price < 900.0);
@@ -35,6 +35,9 @@ namespace Pratica11
 
             var r2 = products.Where(p => p.Category.Name == "Tools").Select(p => p.Name);
             Print("Tools", r2);
+
+            var r3 = products.Where(p => p.Name[0] == 'C').Select(p => new { p.Name, p.Price, CategoryName = p.Name });
+            Print("Names started qith 'C' and anonymous object", r3);
 
             Console.ReadLine();
         }
