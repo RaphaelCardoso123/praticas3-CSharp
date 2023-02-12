@@ -44,10 +44,25 @@ namespace Pratica11
                 select p.Name;
             Print("Tools:", r2);
 
-            var r3 = products.Where(p => p.Name[0] == 'C').Select(p => new { p.Name, p.Price, CategoryName = p.Name });
+            //var r3 = products.Where(p => p.Name[0] == 'C').Select(p => new { p.Name, p.Price, CategoryName = p.Name });
+            var r3 =
+                from p in products
+                where p.Name[0] == 'C'
+                select new
+                {
+                    p.Name,
+                    p.Price,
+                    CategoryName = p.Category.Name
+                };
             Print("Names started with 'C' and anonymous object:", r3);
 
-            var r4 = products.Where(p => p.Category.Tier == 1).OrderBy(p => p.Price).ThenBy(p => p.Name);
+            //var r4 = products.Where(p => p.Category.Tier == 1).OrderBy(p => p.Price).ThenBy(p => p.Name);
+            var r4 =
+                from p in products
+                where p.Category.Tier == 1
+                orderby p.Name
+                orderby p.Name
+                select p;
             Print("Tier 1 order by price then by name:", r4);
 
             var r5 = products.Max(p => p.Price);
