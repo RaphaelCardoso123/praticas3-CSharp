@@ -21,8 +21,10 @@ namespace Pratica2
                     string[] fields = sr.ReadLine().Split(',');
                     string name = fields[0];
                     double price = double.Parse(fields[1], CultureInfo.InvariantCulture);
+                    list.Add(new Product(name, price));
                 }
             }
+
 
             Console.ReadLine();
         }
