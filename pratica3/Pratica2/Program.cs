@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Pratica2
 {
@@ -8,6 +6,8 @@ namespace Pratica2
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Enter full file path: ");
+            string path = Console.ReadLine();
         }
     }
 }
