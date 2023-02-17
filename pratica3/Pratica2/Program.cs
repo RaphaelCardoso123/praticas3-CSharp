@@ -15,6 +15,7 @@ namespace Pratica2
             string path = Console.ReadLine();
 
             List<Product> list = new List<Product>();
+
             using (StreamReader sr = File.OpenText(path))
             {
                 while (!sr.EndOfStream)
@@ -26,6 +27,9 @@ namespace Pratica2
                 }
             }
             var avg = list.Select(p => p.Price).DefaultIfEmpty(0.0).Average();
+            Console.WriteLine("Average price = " + avg.ToString("F2", CultureInfo.InvariantCulture));
+
+            var names = list.Where(p => p.Price < avg).OrderByDescending(p => p.Name).Select(p => p.Name);
 
             Console.ReadLine();
         }
