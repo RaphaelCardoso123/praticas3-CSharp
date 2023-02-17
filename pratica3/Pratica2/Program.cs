@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Pratica2.Entities;
 using System.IO;
 using System.Globalization;
+using System.Linq;
 
 namespace Pratica2
 {
@@ -24,7 +25,7 @@ namespace Pratica2
                     list.Add(new Product(name, price));
                 }
             }
-
+            var avg = list.Select(p => p.Price).DefaultIfEmpty(0.0).Average();
 
             Console.ReadLine();
         }
