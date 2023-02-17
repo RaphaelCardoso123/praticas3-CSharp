@@ -30,6 +30,10 @@ namespace Pratica2
             Console.WriteLine("Average price = " + avg.ToString("F2", CultureInfo.InvariantCulture));
 
             var names = list.Where(p => p.Price < avg).OrderByDescending(p => p.Name).Select(p => p.Name);
+            foreach(string name in names)
+            {
+                Console.ReadLine();
+            }
 
             Console.ReadLine();
         }
